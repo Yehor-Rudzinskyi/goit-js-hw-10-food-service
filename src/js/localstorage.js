@@ -1,1 +1,0 @@
-// localStorage.setItem('some', 'dark')

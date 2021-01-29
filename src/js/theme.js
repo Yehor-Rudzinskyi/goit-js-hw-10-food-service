@@ -12,15 +12,15 @@ let storageIn = localStorage.getItem('theme');
 
 switch (storageIn) {
     case null:
-         bodyRef.classList.add('light-theme')
-        localStorage.setItem('theme', `${LIGHT}`)
+         bodyRef.classList.add(LIGHT)
+        localStorage.setItem('theme', LIGHT)
         break;
     case 'light-theme':
-              bodyRef.classList.add('light-theme')
+              bodyRef.classList.add(LIGHT)
 
         break;
         case 'dark-theme':
-            bodyRef.classList.add('dark-theme')
+            bodyRef.classList.add(DARK)
             themeRef.setAttribute('checked', true) 
             break;
             }
@@ -29,17 +29,16 @@ themeRef.addEventListener('change', event => {
     const cheker = event.target.checked;
     switch (cheker) {
         case true:
-             themeRef.setAttribute('checked', true) 
-            bodyRef.classList.replace('light-theme', 'dark-theme')
-            localStorage.setItem('theme', `${DARK}`)
+            bodyRef.classList.replace(LIGHT, DARK)
+            localStorage.setItem('theme', DARK)
                 break;
         case false:
-             themeRef.setAttribute('checked', false)
-            bodyRef.classList.replace('dark-theme','light-theme')
-            localStorage.setItem('theme', `${LIGHT}`)
+            bodyRef.classList.replace(DARK, LIGHT)
+            localStorage.setItem('theme', LIGHT)
             break;
     }
 });
+
 
 //     if (cheker) {
 //          themeRef.setAttribute('checked', true) 
